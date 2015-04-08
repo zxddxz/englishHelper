@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/next.png</file>
+        <file>img/perious.png</file>
+        <file>img/playStop.png</file>
+        <file>img/stopStop.png</file>
+        <file>img/055.png</file>
+        <file>img/Graphite_Orange_Speaker.ico</file>
+        <file>img/speedUp.png</file>
+        <file>img/stop.png</file>
+        <file>img/play.png</file>
+        <file>img/speedDown.png</file>
+        <file>img/size.png</file>
+        <file>img/046.png</file>
+        <file>img/Graphite_Red_Speaker.ico</file>
+        <file>img/056.png</file>
+    </qresource>
+</RCC>
