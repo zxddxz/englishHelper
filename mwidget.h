@@ -72,6 +72,10 @@ private slots:
 
     void on_ckBoxRepeat_clicked(bool checked);
 
+    void on_btnSpeedDown_clicked();
+
+    void on_btnSpeedUp_clicked();
+
 private:
     void createMediaGraph();   //构造媒体图
     void connectSig_Slots();   //链接槽和信号

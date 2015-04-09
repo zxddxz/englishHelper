@@ -717,6 +717,11 @@ void MWidget::on_btnSound_clicked()
 void MWidget::seekPos(int i)
 {
      seek_start = i*0.01*mediatObject->totalTime();
+     QTime total( ((qint64)seek_start/60000)/60
+                  ,((qint64)seek_start/60000)%60
+                  ,((qint64)seek_start/1000)%60
+                );
+     ui->labStart->setText(total.toString("hh:mm:ss"));
     if(repeatPlayFlag == true)
     {
      mediatObject->seek( seek_start);
@@ -726,6 +731,11 @@ void MWidget::seekPos(int i)
 void MWidget::seekStop(int i)
 {
     qreal k = i*0.01*mediatObject->totalTime();
+    QTime total( ((qint64)k/60000)/60
+                 ,((qint64)k/60000)%60
+                 ,((qint64)k/1000)%60
+               );
+    ui->labStop->setText(total.toString("hh:mm:ss"));
     if(k > seek_start)
     seek_Stop = k;
     else //位置考前取消循环
@@ -745,4 +755,33 @@ void MWidget::on_ckBoxRepeat_clicked(bool checked)
     repeatPlayFlag = checked;
     if( repeatPlayFlag == true)
         mediatObject->seek(seek_start);
+}
+
+void MWidget::on_btnSpeedDown_clicked()
+{
+   if(ui->hScrollBarStart->value()>=0)
+   {
+       qreal i = ui->hScrollBarStart->value()-ui->spinBox->value();
+       if(i<0)
+           i=0;
+       seek_start =  i;
+       ui->hScrollBarStart->setValue(i);
+       this->update();
+       emit seekPos(i);
+   }
+
+}
+
+void MWidget::on_btnSpeedUp_clicked()
+{
+    if(ui->hScrollBarStart->value()<=100)
+    {
+        qreal i = ui->hScrollBarStart->value()+ui->spinBox->value();
+        if(i>100)
+            i=100;
+        seek_start =  i;
+        ui->hScrollBarStart->setValue(i);
+        this->update();
+        emit seekPos(i);
+    }
 }

@@ -305,14 +305,40 @@
   <widget class="QCheckBox" name="ckBoxRepeat">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>251</y>
+     <x>10</x>
+     <y>247</y>
      <width>87</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
     <string>repeat</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labStart">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>270</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0:0:0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labStop">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>310</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0:0:0</string>
    </property>
   </widget>
  </widget>
